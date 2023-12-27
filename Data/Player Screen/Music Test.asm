@@ -37,7 +37,7 @@ LoadPlaySound_Index:		; Max, Index, Start, Method
 		SetConf_PlaySound $F,PlayShaunBMSound_Index,2,PlayShaunSound		; B (Shaun Hollingworth BM)
 		SetConf_PlaySound $1E,0,$BD,PlayKonamiSound							; C (Konami Castlevania)
 		SetConf_PlaySound 6,0,$25,PlaySound_DataEast							; D (Data East CF)
-		SetConf_PlaySound $18,0,$2A,Play_GEMS_Music							; E (GEMS CZ)
+		SetConf_PlaySound $18,PlayGEMSCZSound_Index,$2A,Play_GEMS_Music			; E (GEMS CZ)
 		SetConf_PlaySound 8,0,$8C,Play_GEMS_Music							; F (GEMS CZB)
 		SetConf_PlaySound 7,0,$51,Play_GEMS_Music							; 10 (GEMS DBC)
 		SetConf_PlaySound $E,PlayTerpDevilishSound_Index,0,PlaySound_Terp		; 11 (Terp Devilish)
@@ -109,6 +109,10 @@ LoadPlaySound_Index:		; Max, Index, Start, Method
 PlayGEMSASound_Index:
 		dc.b 0, 1, 2, 3, 4, 5, 7, 8, 9, $B, $D, $10, $11
 		dc.b $16, $18, $19, $1A, $1B
+PlayGEMSCZSound_Index:
+		dc.b $18, 0, 1, $12, 9, $C, 8, 3, 2, $A, 4, $B, $E, 5, $10
+		dc.b $F, $17, $D, $14, 7, $13, $15, $16, $11, 6
+		even
 PlayRareBDDSound_Index:
 		dc.b 0, 1, 3, 4, 5, 6, 7, 8, 9, $A, $B, $C, $D, $E, $F, $10, $11, $12, $13,0
 PlayGEMSDoomSound_Index:
