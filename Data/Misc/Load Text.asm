@@ -72,6 +72,8 @@ Calculate_TextPosition:
 		add.w	d2,d1
 		add.w	d4,d1
 		add.w	d1,d1
+		and.b	#%10000000,d1
+		add.w	#6,d1
 		swap	d1
 		clr.w	d1
 		add.l	d1,d3
