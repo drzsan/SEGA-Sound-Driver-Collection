@@ -6,8 +6,10 @@ Changelog:
 
    1. Enhanced Color Palette:
       - Improved and enriched color palette for a better visual experience.
+        
    2. Comix Zone Tweaks:
       - Reordered and renamed songs in Comix Zone for an enhanced and immersive soundtrack.
+        
    3. Analogue Pocket Compatibility:
       - Addressed compatibility issues with Analogue Pocket console.
       - Corrected text alignment for seamless display on Analogue Pocket when connected to a dock station and enabled filters.
