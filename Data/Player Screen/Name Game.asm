@@ -12,7 +12,7 @@ Load_DriverText:
 		movea.l	(Driver_MusicText_Pointer).w,a1
 		add.w	d0,d0
 		adda.w	(a1,d0.w),a1
-		locVRAM	$ED80,d3
+		locVRAM	$EC80,d3
 		bsr.w	Calculate_TextPosition
 		move.l	d3,VDP_control_port-VDP_control_port(a5)
 
