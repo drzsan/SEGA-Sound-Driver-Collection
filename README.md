@@ -14,3 +14,7 @@ Credits:
 Also big thanks to people from project2612. Thanks to this site I was able to find the right names for all the tracks.
 
 Sorry if I forgot anyone...
+
+27.12.23 UPDATE
+
+INTRODUCING SEGA SOUND DRIVER COLLECTION V3.1
