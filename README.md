@@ -2,7 +2,7 @@
 
 INTRODUCING SEGA MUSIC CARTRIDGE V3.1
 
-CHANGEINFO:
+Changelog:
 
    1. Enhanced Color Palette:
       - Improved and enriched color palette for a better visual experience.
