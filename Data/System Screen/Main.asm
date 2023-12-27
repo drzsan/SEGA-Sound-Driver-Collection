@@ -23,10 +23,13 @@ CheckSum_ErrorText:	; CheckSum Error
 		dc.b "   CHECKSUM INCORRECT.",$81
 		dc.b "PLEASE DOWNLOAD ROM AGAIN.",-1
 CheckSum_WaitText:	; CheckSum Wait
-		dc.b "   THIS PRODUCT IS NOT PRODUCED",$81
-		dc.b "     BY OR UNDER LICENSE FROM",$81
-		dc.b "       SEGA ENTERPRISES LTD",$91
-		dc.b "CHECKSUM IS CHECKED. PLEASE WAIT...",-1
+		dc.b "SEGA MUSIC CARTRIDGE V3.1",$82
+		dc.b "THIS PRODUCT IS NOT PRODUCED",$81
+		dc.b "BY OR UNDER LICENSE FROM",$81
+		dc.b "SEGA ENTERPRISES LTD",$89
+		dc.b "IDEA AND IMPLEMENTATION - ",$81
+		dc.b "THEBLAD768",$83
+		dc.b "VERSION 3.1. 27.12.23",-1
 	even
 
 		CHARSET ; reset character set
@@ -74,6 +77,7 @@ System_CheckSumCheck:
 		lea	CheckSum_ErrorText(pc),a1
 		locVRAM	$E70E,d1
 		bra.s	System_CheckConsole_LoadText
+		
 ; ---------------------------------------------------------------------------
 
 System_CheckConsole:
@@ -85,6 +89,9 @@ System_CheckConsole:
 		lea	NTSCUJ_ErrorText(pc),a1
 		locVRAM	$E708,d1
 
+
 System_CheckConsole_LoadText:
 		bsr.s	System_LoadText
 		bra.s	*
+
+
