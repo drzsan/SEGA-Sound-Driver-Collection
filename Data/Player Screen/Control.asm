@@ -62,18 +62,10 @@ Current_Music_Control:
 		beq.s	Control_Text_Return
 
 Load_DriverText_StopMusic:
-		moveq	#2,d2
 		lea	Load_DriverText_StopMusic_Index(pc),a1
-		bra.s	Load_DriverText_Play
-; ---------------------------------------------------------------------------
-
-Load_DriverText_StartMusic:
-		moveq	#3,d2
-		lea	LoadPlaySound_Index+4(pc),a1
-
-Load_DriverText_Play:
 		move.w	(Driver_SaveLine_Count).w,d0
-		lsl.w	d2,d0
+		add.w	d0,d0
+		add.w	d0,d0
 		lea	(a1,d0.w),a1
 		moveq	#0,d0
 		move.b	(a1),d0
@@ -81,6 +73,23 @@ Load_DriverText_Play:
 		andi.l	#$FFFFFF,d2
 		movea.l	d2,a0
 		jmp	(a0)
+; ---------------------------------------------------------------------------
+
+Load_DriverText_StartMusic:
+		moveq	#0,d0
+		moveq	#0,d2
+		movea.w	(Driver_MusicPlay_Pointer).w,a2
+		move.l	#$FFFFFF,d3
+		move.l	(a2)+,d1
+		and.l	d3,d1
+		beq.s	+
+		movea.l	d1,a1
+		move.b	(a1,d0.w),d0
++		add.b	(a2),d0
+		move.l	(a2),d2
+		and.l	d3,d2
+		movea.l	d2,a2
+		jmp	(a2)
 ; ---------------------------------------------------------------------------
 
 Load_DriverText_StopMusic_Index:
